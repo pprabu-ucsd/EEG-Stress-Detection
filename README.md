@@ -2,6 +2,7 @@
 
 **Pranav Prabu, Selina Wu, Calwin Li**  
 COGS 189: Brain Computer Interfaces — Winter 2026, UC San Diego
+[Link to Paper](https://docs.google.com/document/d/1raws2RGpRGAk9-RfQMKDVdhlyY-J5jgU8e6jHiDMviI/edit?usp=sharing)
 
 ---
 
