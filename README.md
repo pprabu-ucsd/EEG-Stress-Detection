@@ -17,8 +17,8 @@ Our results show that classical linear models (LDA) achieve modest performance w
 
 | Dataset | Used By | Task |
 |---|---|---|
-| [DREAMER](https://doi.org/10.1109/JBHI.2017.2688239) | LDA | Binary stress classification |
-| [SAM40](https://doi.org/10.1016/j.dib.2021.107772) (`eeg_data.csv`) | CNN, XGBoost, Random Forest | 3-class emotion classification |
+| DREAMER | LDA | Binary stress classification |
+| SAM40 (`eeg_data.csv`) | CNN, XGBoost, Random Forest | 3-class emotion classification |
 
 ---
 
