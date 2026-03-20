@@ -7,7 +7,7 @@ COGS 189: Brain Computer Interfaces — Winter 2026, UC San Diego
 
 ## Overview
 
-This project evaluates machine learning approaches for EEG-based stress and emotion classification. We implement four models — LDA, CNN, XGBoost, and Random Forest — across two EEG datasets, comparing classical linear methods against more complex ensemble and deep learning approaches.
+This project evaluates machine learning approaches for EEG-based stress classification. We implement four models — LDA, CNN, XGBoost, and Random Forest — across two EEG datasets, comparing classical linear methods against more complex ensemble and deep learning approaches.
 
 Our results show that classical linear models (LDA) achieve modest performance with high inter-subject variability, while more complex models (XGBoost, CNN) demonstrate stronger and more consistent feature learning.
 
@@ -28,13 +28,13 @@ Our results show that classical linear models (LDA) achieve modest performance w
 Binary stress classification on DREAMER using PSD-based bandpower features (theta, alpha, beta) across 14 EEG channels. Stress is defined as high arousal (≥3) and low valence (≤3). Three feature representations are compared: raw bandpower, baseline difference, and baseline log-ratio. Evaluated via subject-wise stratified 3-fold cross-validation.
 
 ### CNN (`EEG_Stress_Detection_CNN.ipynb`)
-3-class emotion classification on SAM40. A 783-feature vector per trial is reshaped into a 28×28 pseudo-image and passed through a 3-block convolutional network (32→64→128 filters) with LeakyReLU activations, trained for 100 epochs with Adam and categorical cross-entropy.
+3-class stress classification on SAM40. A 783-feature vector per trial is reshaped into a 28×28 pseudo-image and passed through a 3-block convolutional network (32→64→128 filters) with LeakyReLU activations, trained for 100 epochs with Adam and categorical cross-entropy.
 
 ### XGBoost (`EEG_Stress_Detection_XGBoost.ipynb`)
-3-class emotion classification on SAM40. Gradient boosted trees (200 estimators, max depth 6, learning rate 0.1) with gain-based feature importances and SHAP explanations. Multi-class ROC and precision-recall curves computed via one-vs-rest binarization.
+3-class stress classification on SAM40. Gradient boosted trees (200 estimators, max depth 6, learning rate 0.1) with gain-based feature importances and SHAP explanations. Multi-class ROC and precision-recall curves computed via one-vs-rest binarization.
 
 ### Random Forest (`EEG_Stress_Detection_Random_Forest.ipynb`)
-3-class emotion classification on SAM40. Ensemble of 100 shallow trees (max depth 2) with Gini impurity-based feature importances.
+3-class stress classification on SAM40. Ensemble of 100 shallow trees (max depth 2) with feature importances.
 
 ---
 
@@ -43,9 +43,9 @@ Binary stress classification on DREAMER using PSD-based bandpower features (thet
 | Model | Task | Accuracy | Macro F1 |
 |---|---|---|---|
 | LDA | Binary stress (DREAMER) | ~0.58 | — |
-| CNN | 3-class emotion (SAM40) | 95.5% | 0.96 |
-| XGBoost | 3-class emotion (SAM40) | 98.4% | 0.98 |
-| Random Forest | 3-class emotion (SAM40) | 93.2% | 0.93 |
+| CNN | 3-class stress (SAM40) | 95.5% | 0.96 |
+| XGBoost | 3-class stress (SAM40) | 98.4% | 0.98 |
+| Random Forest | 3-class stress (SAM40) | 93.2% | 0.93 |
 
 LDA performance was evaluated per-subject via cross-validation (mean AUC 0.54–0.58 across feature representations). CNN, XGBoost, and Random Forest were evaluated on a single 80/20 held-out test split.
 
